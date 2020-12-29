@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 
 import java.lang.reflect.Field;
@@ -14,14 +15,11 @@ import java.lang.reflect.Field;
  * dividers.
  *
  * @author jjobes
- *
  */
-public class CustomDatePicker extends DatePicker
-{
+public class CustomDatePicker extends DatePicker {
     private static final String TAG = "CustomDatePicker";
 
-    public CustomDatePicker(Context context, AttributeSet attrs)
-    {
+    public CustomDatePicker(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         Class<?> idClass = null;
@@ -30,12 +28,11 @@ public class CustomDatePicker extends DatePicker
         Field monthField = null;
         Field dayField = null;
         Field yearField = null;
-        NumberPicker monthNumberPicker = null;
-        NumberPicker dayNumberPicker = null;
-        NumberPicker yearNumberPicker = null;
+        EditText monthNumberPicker = null;
+        EditText dayNumberPicker = null;
+        EditText yearNumberPicker = null;
 
-        try
-        {
+        try {
             // Create an instance of the id class
             idClass = Class.forName("com.android.internal.R$id");
 
@@ -45,11 +42,11 @@ public class CustomDatePicker extends DatePicker
             yearField = idClass.getField("year");
 
             // Use the resource IDs to get references to the month, day and year NumberPickers
-            monthNumberPicker = (NumberPicker) findViewById(monthField.getInt(null));
-            dayNumberPicker = (NumberPicker) findViewById(dayField.getInt(null));
-            yearNumberPicker = (NumberPicker) findViewById(yearField.getInt(null));
+            monthNumberPicker = (EditText) findViewById(monthField.getInt(null));
+            dayNumberPicker = (EditText) findViewById(dayField.getInt(null));
+            yearNumberPicker = (EditText) findViewById(yearField.getInt(null));
 
-            numberPickerClass = Class.forName("android.widget.NumberPicker");
+            numberPickerClass = Class.forName("android.widget.EditText");
 
             // Set the value of the mSelectionDivider field in the month, day and year NumberPickers
             // to refer to our custom drawables
@@ -58,21 +55,13 @@ public class CustomDatePicker extends DatePicker
             selectionDividerField.set(monthNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(dayNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(yearNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             Log.e(TAG, "ClassNotFoundException in CustomDatePicker", e);
-        }
-        catch (NoSuchFieldException e)
-        {
+        } catch (NoSuchFieldException e) {
             Log.e(TAG, "NoSuchFieldException in CustomDatePicker", e);
-        }
-        catch (IllegalAccessException e)
-        {
+        } catch (IllegalAccessException e) {
             Log.e(TAG, "IllegalAccessException in CustomDatePicker", e);
-        }
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
             Log.e(TAG, "IllegalArgumentException in CustomDatePicker", e);
         }
 

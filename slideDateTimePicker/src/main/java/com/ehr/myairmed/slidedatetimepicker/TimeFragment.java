@@ -3,12 +3,15 @@ package com.ehr.myairmed.slidedatetimepicker;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TimePicker;
@@ -194,6 +197,33 @@ public class TimeFragment extends Fragment
                     mCallback.onTimeChanged(
                         mTimePicker.getCurrentHour(),
                         mTimePicker.getCurrentMinute());
+                }
+            });
+        } else if (amPmView instanceof EditText) {
+            ((EditText) amPmView).addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                    if (charSequence.equals(1)) {
+                        if (mTimePicker.getCurrentHour() < 12)
+                            mTimePicker.setCurrentHour(mTimePicker.getCurrentHour() + 12);
+                    } else {
+                        if (mTimePicker.getCurrentHour() >= 12)
+                            mTimePicker.setCurrentHour(mTimePicker.getCurrentHour() - 12);
+                    }
+
+                    mCallback.onTimeChanged(
+                            mTimePicker.getCurrentHour(),
+                            mTimePicker.getCurrentMinute());
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+
                 }
             });
         }

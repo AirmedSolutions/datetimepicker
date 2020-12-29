@@ -3,6 +3,7 @@ package com.ehr.myairmed.slidedatetimepicker;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
 
@@ -14,14 +15,11 @@ import java.lang.reflect.Field;
  * dividers.
  *
  * @author jjobes
- *
  */
-public class CustomTimePicker extends TimePicker
-{
+public class CustomTimePicker extends TimePicker {
     private static final String TAG = "CustomTimePicker";
 
-    public CustomTimePicker(Context context, AttributeSet attrs)
-    {
+    public CustomTimePicker(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         Class<?> idClass = null;
@@ -30,12 +28,11 @@ public class CustomTimePicker extends TimePicker
         Field hourField = null;
         Field minuteField = null;
         Field amPmField = null;
-        NumberPicker hourNumberPicker = null;
-        NumberPicker minuteNumberPicker = null;
-        NumberPicker amPmNumberPicker = null;
+        EditText hourNumberPicker = null;
+        EditText minuteNumberPicker = null;
+        EditText amPmNumberPicker = null;
 
-        try
-        {
+        try {
             // Create an instance of the id class
             idClass = Class.forName("com.android.internal.R$id");
 
@@ -45,11 +42,11 @@ public class CustomTimePicker extends TimePicker
             amPmField = idClass.getField("amPm");
 
             // Use the resource IDs to get references to the hour, minute and amPm NumberPickers
-            hourNumberPicker = (NumberPicker) findViewById(hourField.getInt(null));
-            minuteNumberPicker = (NumberPicker) findViewById(minuteField.getInt(null));
-            amPmNumberPicker = (NumberPicker) findViewById(amPmField.getInt(null));
+            hourNumberPicker = (EditText) findViewById(hourField.getInt(null));
+            minuteNumberPicker = (EditText) findViewById(minuteField.getInt(null));
+            amPmNumberPicker = (EditText) findViewById(amPmField.getInt(null));
 
-            numberPickerClass = Class.forName("android.widget.NumberPicker");
+            numberPickerClass = Class.forName("android.widget.EditText");
 
             // Set the value of the mSelectionDivider field in the hour, minute and amPm NumberPickers
             // to refer to our custom drawables
@@ -58,22 +55,14 @@ public class CustomTimePicker extends TimePicker
             selectionDividerField.set(hourNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(minuteNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
             selectionDividerField.set(amPmNumberPicker, getResources().getDrawable(R.drawable.selection_divider));
-        }
-        catch (ClassNotFoundException e)
-        {
-            Log.e(TAG, "ClassNotFoundException in CustomTimePicker - "+ e.getLocalizedMessage());
-        }
-        catch (NoSuchFieldException e)
-        {
-            Log.e(TAG, "NoSuchFieldException in CustomTimePicker - "+ e.getLocalizedMessage());
-        }
-        catch (IllegalAccessException e)
-        {
-            Log.e(TAG, "IllegalAccessException in CustomTimePicker - "+ e.getLocalizedMessage());
-        }
-        catch (IllegalArgumentException e)
-        {
-            Log.e(TAG, "IllegalArgumentException in CustomTimePicker - "+ e.getLocalizedMessage());
+        } catch (ClassNotFoundException e) {
+            Log.e(TAG, "ClassNotFoundException in CustomTimePicker - " + e.getLocalizedMessage());
+        } catch (NoSuchFieldException e) {
+            Log.e(TAG, "NoSuchFieldException in CustomTimePicker - " + e.getLocalizedMessage());
+        } catch (IllegalAccessException e) {
+            Log.e(TAG, "IllegalAccessException in CustomTimePicker - " + e.getLocalizedMessage());
+        } catch (IllegalArgumentException e) {
+            Log.e(TAG, "IllegalArgumentException in CustomTimePicker - " + e.getLocalizedMessage());
         }
     }
 }
