@@ -1,5 +1,4 @@
-# myairmeddatepicker
-MyAirmed Date Picker Library
+# datetimepicker
 
 To get a Git project into your build:
 
