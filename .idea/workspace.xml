@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d661e88-b3aa-40d7-b7f1-ffe7e594c12a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8d661e88-b3aa-40d7-b7f1-ffe7e594c12a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +56,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/ganpa/AppData/Local/Android/Sdk/sources/android-30/android/widget/NumberPicker.java_SELECTED" value="NumberPicker" />
     <property name="android-custom-viewD:/Android Spark/SlideDateTimePicker/slideDateTimePicker/src/main/java/com/ehr/myairmed/slidedatetimepicker/CustomDatePicker.java_SELECTED" value="CustomDatePicker" />
     <property name="android-custom-viewD:/Android Spark/SlideDateTimePicker/slideDateTimePicker/src/main/java/com/ehr/myairmed/slidedatetimepicker/CustomTimePicker.java_SELECTED" value="CustomTimePicker" />
     <property name="android-custom-viewD:/Android Spark/SlideDateTimePicker/slideDateTimePicker/src/main/java/com/ehr/myairmed/slidedatetimepicker/CustomViewPager.java_SELECTED" value="CustomViewPager" />
