@@ -28,9 +28,9 @@ public class CustomDatePicker extends DatePicker {
         Field monthField = null;
         Field dayField = null;
         Field yearField = null;
-        EditText monthNumberPicker = null;
-        EditText dayNumberPicker = null;
-        EditText yearNumberPicker = null;
+        NumberPicker monthNumberPicker = null;
+        NumberPicker dayNumberPicker = null;
+        NumberPicker yearNumberPicker = null;
 
         try {
             // Create an instance of the id class
@@ -42,9 +42,9 @@ public class CustomDatePicker extends DatePicker {
             yearField = idClass.getField("year");
 
             // Use the resource IDs to get references to the month, day and year NumberPickers
-            monthNumberPicker = (EditText) findViewById(monthField.getInt(null));
-            dayNumberPicker = (EditText) findViewById(dayField.getInt(null));
-            yearNumberPicker = (EditText) findViewById(yearField.getInt(null));
+            monthNumberPicker = findViewById(monthField.getInt(null));
+            dayNumberPicker = findViewById(dayField.getInt(null));
+            yearNumberPicker = findViewById(yearField.getInt(null));
 
             numberPickerClass = Class.forName("android.widget.EditText");
 

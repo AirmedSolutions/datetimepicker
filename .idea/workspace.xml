@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d661e88-b3aa-40d7-b7f1-ffe7e594c12a" name="Default Changelist" comment="" />
+    <list default="true" id="8d661e88-b3aa-40d7-b7f1-ffe7e594c12a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,14 +183,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="544" y="276" key="Github.Dialog.Accounts.Choose/0.0.1366.728@0.0.1366.728" timestamp="1621674532377" />
-    <state x="129" y="55" key="MergeDialog" timestamp="1621674154409">
+    <state x="129" y="55" key="MergeDialog" timestamp="1621682916676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="129" y="55" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1621674154409" />
-    <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1621674154421">
+    <state x="129" y="55" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1621682916676" />
+    <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1621682916689">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1621674154421" />
+    <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1621682916689" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1621674823675">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
